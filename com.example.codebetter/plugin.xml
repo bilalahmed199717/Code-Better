@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin>
+   <extension point="org.eclipse.ui.views">
+      <view
+            class="com.example.codebetter.view.ElementView"
+            id="com.example.codebetter.view.elementView"
+            name="Element View">
+      </view>
+   </extension>
+   <extension point="org.eclipse.ui.menus">
+      <menuContribution
+            locationURI="menu:com.example.codebetter.menu">
+         <menu
+               label="CodeBetterMenu"
+               id="com.example.codebetter.menu">
+            <command
+                  commandId="com.example.codebetter.checkSignatureCommand"
+                  label="Check Signature"
+                  id="com.example.codebetter.checkSignature">
+            </command>
+            <command
+                  commandId="com.example.codebetter.checkDuplicationCommand"
+                  label="Check Duplication"
+                  id="com.example.codebetter.checkDuplication">
+            </command>
+            <command
+                  commandId="com.example.codebetter.extractMethodCommand"
+                  label="Extract Method"
+                  id="com.example.codebetter.extractMethod">
+            </command>
+            <command
+                  commandId="com.example.codebetter.renameElementsCommand"
+                  label="Rename Elements"
+                  id="com.example.codebetter.renameElements">
+            </command>
+         </menu>
+      </menuContribution>
+   </extension>
+   <extension point="org.eclipse.ui.commands">
+      <command
+            id="com.example.codebetter.checkSignatureCommand"
+            name="Check Signature">
+      </command>
+      <command
+            id="com.example.codebetter.checkDuplicationCommand"
+            name="Check Duplication">
+      </command>
+      <command
+            id="com.example.codebetter.extractMethodCommand"
+            name="Extract Method">
+      </command>
+      <command
+            id="com.example.codebetter.renameElementsCommand"
+            name="Rename Elements">
+      </command>
+   </extension>
+   <extension point="org.eclipse.ui.handlers">
+      <handler
+            class="com.example.codebetter.handlers.CheckSignatureHandler"
+            commandId="com.example.codebetter.checkSignatureCommand">
+      </handler>
+      <handler
+            class="com.example.codebetter.handlers.CheckDuplicationHandler"
+            commandId="com.example.codebetter.checkDuplicationCommand">
+      </handler>
+      <handler
+            class="com.example.codebetter.handlers.ExtractMethodHandler"
+            commandId="com.example.codebetter.extractMethodCommand">
+      </handler>
+      <handler
+            class="com.example.codebetter.handlers.RenameElementsHandler"
+            commandId="com.example.codebetter.renameElementsCommand">
+      </handler>
+   </extension>
+</plugin>
